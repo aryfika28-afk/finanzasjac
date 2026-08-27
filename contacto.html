@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Mueblerías JAC</title>
+  <meta name="description" content="Contacte a Mueblerías JAC. Dirección, WhatsApp, correo y formulario de cita. ID de campaña visible.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="google-site-verification" content="D3arcFrvZbKlguVMyasAe-IkZap9qwvVyMu2WAxTUyg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703644069720204"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo brand-font">Mueblerías JAC <small>Colombia</small></a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="index.html#casa">La casa</a>
+        <a href="index.html#mision">Misión</a>
+        <a href="index.html#historia">Historia</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="contacto.html" class="nav-cta is-active">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero bg-image" style="background-image:url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=2200&q=85')">
+    <div class="container">
+      <span class="eyebrow">Contacto</span>
+      <h1>Una conversación, no un formulario vacío.</h1>
+      <p style="max-width:560px;color:rgba(255,253,249,.85)">Cuéntenos el espacio, el plazo y lo que desea resolver. Le respondemos con criterio, muestras y una propuesta de visita.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <aside>
+        <div class="info-block reveal">
+          <span class="eyebrow">Dirección</span>
+          <h3 data-bind="direccion">cololmabia</h3>
+          <p>Colombia. Showroom con cita recomendada para una atención sin interrupciones.</p>
+        </div>
+        <div class="info-block reveal">
+          <span class="eyebrow">WhatsApp / celular</span>
+          <h3><a data-wa href="#"><span data-bind="whatsapp">3002073265</span></a></h3>
+          <p>Mensajes de lunes a sábado en horario comercial. Para proyectos, indique ciudad y tipo de inmueble.</p>
+        </div>
+        <div class="info-block reveal">
+          <span class="eyebrow">Correo</span>
+          <h3><a data-mail href="#"><span data-bind="correo">contacto@muebleriasjac.com</span></a></h3>
+          <p data-bind="horarios"></p>
+        </div>
+        <div class="info-block reveal">
+          <span class="eyebrow">ID de campaña</span>
+          <h3 class="campaign-id" data-campaign></h3>
+          <p>Este identificador se incluye de forma automática en cada envío del formulario y figura en el pie de página del sitio. Permite atribuir la consulta a la campaña digital vigente de Mueblerías JAC.</p>
+        </div>
+        <a class="btn btn-gold" data-wa href="#" style="margin-top:8px">Abrir WhatsApp</a>
+      </aside>
+
+      <div>
+        <div class="form-success">
+          <h3 class="serif" style="font-size:2rem;margin-bottom:8px">Mensaje recibido</h3>
+          <p>Gracias. Un asesor de Mueblerías JAC se pondrá en contacto a la brevedad. Si su consulta es urgente, escríbanos por WhatsApp al <span data-bind="whatsapp">3002073265</span>.</p>
+        </div>
+        <form class="form" id="contact-form" novalidate>
+          <input type="hidden" name="campaignId" data-campaign value="">
+          <div class="form-row">
+            <label>Nombre completo <input name="nombre" required autocomplete="name"></label>
+            <label>Correo electrónico <input type="email" name="email" required autocomplete="email"></label>
+          </div>
+          <div class="form-row">
+            <label>Teléfono <input name="telefono" required autocomplete="tel"></label>
+            <label>Asunto
+              <select name="asunto" required>
+                <option value="">Seleccione</option>
+                <option>Visita al showroom</option>
+                <option>Proyecto residencial</option>
+                <option>Proyecto corporativo / hotelero</option>
+                <option>Mobiliario a medida</option>
+                <option>Restauración o tapicería</option>
+                <option>Otro</option>
+              </select>
+            </label>
+          </div>
+          <label>Mensaje
+            <textarea name="mensaje" required placeholder="Describa el espacio, la ciudad y el plazo aproximado."></textarea>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="acepto" name="acepto" required>
+            <span>He leído y acepto los <a href="terminos.html">términos y condiciones</a> y la <a href="privacidad.html">política de privacidad</a> de Mueblerías JAC. El envío no es posible sin esta aceptación.</span>
+          </label>
+          <p class="form-error">Complete todos los campos y acepte los términos y condiciones para enviar el mensaje.</p>
+          <button class="btn btn-dark" type="submit">Enviar consulta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" style="background-image:url('https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=2200&q=85');background-size:cover;background-position:center">
+    <div class="inner container">
+      <h2>Preferimos recibirle en persona.</h2>
+      <p>El showroom está pensado para tocar maderas, telas y herrajes. Una cita de cuarenta minutos evita semanas de indecisión.</p>
+      <a class="btn btn-gold" data-wa href="#">Confirmar por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-font">Mueblerías JAC</span>
+        <p>Mueblería de alta gama. Diseño, materia y permanencia.</p>
+        <p style="margin-top:12px"><span data-bind="direccion">cololmabia</span> · Colombia</p>
+        <p class="campaign-id" style="margin-top:18px">ID de campaña: <span data-campaign></span></p>
+      </div>
+      <div>
+        <h3>Casa</h3>
+        <p><a href="index.html#mision">Misión y visión</a></p>
+        <p><a href="index.html#historia">Historia</a></p>
+        <p><a href="index.html#servicios">Servicios</a></p>
+        <p><a href="index.html">Inicio</a></p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p><a data-wa href="#">WhatsApp <span data-bind="whatsapp">3002073265</span></a></p>
+        <p><a data-mail href="#"><span data-bind="correo">contacto@muebleriasjac.com</span></a></p>
+        <p data-bind="horarios"></p>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <p><a href="terminos.html">Términos y condiciones</a></p>
+        <p><a href="privacidad.html">Política de privacidad</a></p>
+        <p><a href="cookies.html">Política de cookies</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year></span> Mueblerías JAC. Todos los derechos reservados.</span>
+      <span>ID de campaña: <strong class="campaign-id" data-campaign></strong></span>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa href="#" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.9.7.7-3.8-.2-.3A9.1 9.1 0 1 1 12 20.5zm5-6.8c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.4.1-.3a1.5 1.5 0 0 0 0-.6c0-.2-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9 15 15 0 0 0 1.5.5 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+  </a>
+
+  <aside class="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+    <h3>Cookies y privacidad</h3>
+    <p>Utilizamos cookies necesarias y, si usted lo autoriza, de analítica y marketing. Consulte la <a href="cookies.html" style="color:var(--gold)">política de cookies</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-gold" type="button" data-cookie-accept>Aceptar</button>
+      <button class="btn btn-ghost" type="button" data-cookie-reject>Rechazar</button>
+      <button class="btn btn-ghost" type="button" data-cookie-config>Configurar</button>
+    </div>
+  </aside>
+  <div class="cookie-modal">
+    <div class="cookie-panel">
+      <h3 class="serif" style="font-size:2rem;margin-bottom:8px">Preferencias de cookies</h3>
+      <label><input type="checkbox" checked disabled> Necesarias</label>
+      <label><input type="checkbox" id="ck-analytics"> Analítica</label>
+      <label><input type="checkbox" id="ck-marketing"> Marketing — ID de campaña: <span data-campaign></span></label>
+      <div class="cookie-actions" style="margin-top:20px">
+        <button class="btn btn-gold" type="button" data-cookie-save>Guardar</button>
+        <button class="btn btn-line" type="button" data-cookie-close>Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

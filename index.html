@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financiera JAC | Monitoría y Estrategia Financiera Empresarial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0d1f3c 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0a1628;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #d4af37;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: #a0b4d0;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+
+        nav ul li a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 22, 40, 0.85), rgba(13, 31, 60, 0.9)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            color: #e0e8f0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            color: #0a1628;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Servicios */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #0a1628;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #5a6b7a;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e8ecf1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(10, 22, 40, 0.2);
+            border-color: #d4af37;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-body {
+            padding: 25px;
+        }
+
+        .service-body h3 {
+            font-size: 1.4rem;
+            color: #0a1628;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-body h3 .icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #0a1628;
+            flex-shrink: 0;
+        }
+
+        .service-body p {
+            color: #5a6b7a;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .service-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-body ul li {
+            padding: 6px 0;
+            color: #3a4b5c;
+            font-size: 0.95rem;
+        }
+
+        .service-body ul li::before {
+            content: '✓ ';
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Metodología */
+        .methodology {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+            padding: 80px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(10, 22, 40, 0.15);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #0a1628, #1a2a4a);
+            color: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            box-shadow: 0 6px 20px rgba(10, 22, 40, 0.3);
+        }
+
+        .step-card h3 {
+            color: #0a1628;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .step-card p {
+            color: #5a6b7a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Imagen de equipo */
+        .team-image-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .team-image-section img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        /* Testimonios */
+        .testimonials {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #d4af37;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #3a4b5c;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: #0a1628;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testimonial-card .author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1628;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: #a0b4d0;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            padding: 4px 0;
+        }
+
+        .footer-col ul li a {
+            color: #a0b4d0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1a2a4a;
+            padding-top: 20px;
+            text-align: center;
+            color: #5a6b7a;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 10px;
+            }
+            .logo-area {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-area">
+                <div class="logo-icon">JAC</div>
+                <div class="logo-text">
+                    <h1>FINANCIERA JAC</h1>
+                    <p>Monitoría & Estrategia Financiera</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#metodologia">Metodología</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h2>Potencia el Futuro Financiero de tu Empresa</h2>
+            <p>En <strong>Financiera JAC</strong> nos especializamos en <strong>monitoría integral</strong> y <strong>gestión estratégica</strong> para empresas del sector financiero. Transformamos datos en decisiones inteligentes que impulsan el crecimiento sostenible de tu organización.</p>
+            <a href="#contacto" class="cta-button">Solicita una Consultoría Gratuita</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="section" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios Especializados</h2>
+                <p>Soluciones integrales diseñadas para optimizar la salud financiera de tu empresa con tecnología de vanguardia y expertise comprobado.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" 
+                         alt="Monitoría financiera en tiempo real" class="service-image"
+                         onerror="this.src='https://placehold.co/600x400/0a1628/d4af37?text=Monitoría+Financiera'">
+                    <div class="service-body">
+                        <h3><span class="icon">📊</span> Monitoría Financiera 24/7</h3>
+                        <p>Supervisión continua de indicadores clave de desempeño (KPIs) financieros con alertas tempranas y dashboards personalizados.</p>
+                        <ul>
+                            <li>Tableros de control en tiempo real</li>
+                            <li>Alertas de desviaciones presupuestarias</li>
+                            <li>Análisis de flujo de caja diario</li>
+                            <li>Reportes ejecutivos automatizados</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" 
+                         alt="Estrategia financiera corporativa" class="service-image"
+                         onerror="this.src='https://placehold.co/600x400/0a1628/d4af37?text=Estrategia+Financiera'">
+                    <div class="service-body">
+                        <h3><span class="icon">🎯</span> Estrategia Financiera Corporativa</h3>
+                        <p>Diseñamos planes estratégicos que alinean los objetivos financieros con la visión de largo plazo de tu organización.</p>
+                        <ul>
+                            <li>Planeación financiera estratégica</li>
+                            <li>Optimización de estructura de capital</li>
+                            <li>Modelación financiera avanzada</li>
+                            <li>Gestión de inversiones y portafolios</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" 
+                         alt="Gestión de riesgos empresariales" class="service-image"
+                         onerror="this.src='https://placehold.co/600x400/0a1628/d4af37?text=Gestión+de+Riesgos'">
+                    <div class="service-body">
+                        <h3><span class="icon">🛡️</span> Gestión de Riesgos</h3>
+                        <p>Identificamos, medimos y mitigamos riesgos financieros para proteger el patrimonio y la rentabilidad de tu empresa.</p>
+                        <ul>
+                            <li>Análisis de riesgo crediticio</li>
+                            <li>Riesgo de mercado y liquidez</li>
+                            <li>Cumplimiento normativo (Basel, IFRS)</li>
+                            <li>Pruebas de estrés financiero</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c7374b2d72f7?w=600&q=80" 
+                         alt="Consultoría en finanzas corporativas" class="service-image"
+                         onerror="this.src='https://placehold.co/600x400/0a1628/d4af37?text=Consultoría+Financiera'">
+                    <div class="service-body">
+                        <h3><span class="icon">💼</span> Consultoría Financiera</h3>
+                        <p>Asesoramiento personalizado para fusiones, adquisiciones, reestructuración de deuda y optimización fiscal.</p>
+                        <ul>
+                            <li>Valoración de empresas (Valuation)</li>
+                            <li>Due diligence financiero</li>
+                            <li>Reestructuración de pasivos</li>
+                            <li>Planeación fiscal estratégica</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" 
+                         alt="Tecnología financiera" class="service-image"
+                         onerror="this.src='https://placehold.co/600x400/0a1628/d4af37?text=Tecnología+Financiera'">
+                    <div class="service-body">
+                        <h3><span class="icon">🤖</span> Tecnología & Automatización</h3>
+                        <p>Implementamos soluciones FinTech que automatizan procesos, reducen errores y mejoran la eficiencia operativa.</p>
+                        <ul>
+                            <li>Automatización de reportes</li>
+                            <li>Integración de ERPs financieros</li>
+                            <li>Business Intelligence aplicado</li>
+                            <li>Machine Learning para forecasting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" 
+                         alt="Capacitación financiera empresarial" class="service-image"
+                         onerror="this.src='https://placehold.co/600x400/0a1628/d4af37?text=Capacitación+Financiera'">
+                    <div class="service-body">
+                        <h3><span class="icon">🎓</span> Capacitación & Formación</h3>
+                        <p>Programas de entrenamiento para equipos financieros y directivos en las mejores prácticas de gestión financiera moderna.</p>
+                        <ul>
+                            <li>Talleres de análisis financiero</li>
+                            <li>Certificaciones en gestión de riesgos</li>
+                            <li>Seminarios de estrategia corporativa</li>
+                            <li>Mentoría personalizada para CFOs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Imagen de equipo -->
+    <section class="team-image-section">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1000&q=80" 
+                 alt="Equipo de Financiera JAC en sala de juntas analizando estrategias"
+                 style="width:100%; max-height:450px; object-fit:cover;"
+                 onerror="this.src='https://placehold.co/1000x450/0a1628/d4af37?text=Equipo+Financiera+JAC'">
+        </div>
+    </section>
+
+    <!-- Metodología -->
+    <section class="methodology" id="metodologia">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra Metodología de Trabajo</h2>
+                <p>Un enfoque estructurado en 4 fases que garantiza resultados medibles y sostenibles para tu empresa.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Diagnóstico Financiero</h3>
+                    <p>Realizamos un análisis exhaustivo de la situación actual: estados financieros, flujos de caja, estructura de capital y riesgos existentes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Diseño Estratégico</h3>
+                    <p>Elaboramos un plan de acción personalizado con objetivos claros, KPIs definidos y un roadmap de implementación detallado.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Implementación & Monitoría</h3>
+                    <p>Ejecutamos las estrategias diseñadas mientras monitoreamos en tiempo real los indicadores para asegurar el cumplimiento de metas.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Optimización Continua</h3>
+                    <p>Ajustamos y refinamos las estrategias basándonos en datos reales y cambios del mercado para maximizar la rentabilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros / Imagen adicional -->
+    <section class="section" id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por Qué Elegir Financiera JAC?</h2>
+                <p>Más de 15 años de experiencia respaldan nuestra reputación como líderes en consultoría financiera empresarial en Latinoamérica.</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-top: 40px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" 
+                         alt="Profesionales de Financiera JAC colaborando"
+                         style="width:100%; border-radius:15px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);"
+                         onerror="this.src='https://placehold.co/600x400/0a1628/d4af37?text=Expertos+JAC'">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-size: 1.8rem; color: #0a1628; margin-bottom: 20px;">Expertos en Finanzas Corporativas</h3>
+                    <p style="color: #5a6b7a; line-height: 1.8; margin-bottom: 15px;">
+                        En <strong>Financiera JAC</strong> combinamos conocimiento técnico profundo con tecnología de punta para ofrecer servicios de <strong>monitoría financiera</strong> que realmente marcan la diferencia. Nuestro equipo está conformado por analistas certificados, contadores públicos, administradores de riesgos y estrategas financieros con amplia trayectoria en el sector bancario, fondos de inversión y multilatinas.
+                    </p>
+                    <p style="color: #5a6b7a; line-height: 1.8; margin-bottom: 15px;">
+                        Gestionamos integralmente todo lo relacionado con las finanzas de tu empresa: desde la <strong>contabilidad diaria</strong> hasta la <strong>planeación estratégica a 10 años</strong>. Nos encargamos de que cada decisión esté respaldada por datos precisos y análisis rigurosos.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; color: #3a4b5c;">✅ +200 empresas confían en nosotros</li>
+                        <li style="padding: 8px 0; color: #3a4b5c;">✅ Presencia en 8 países de Latinoamérica</li>
+                        <li style="padding: 8px 0; color: #3a4b5c;">✅ 98% de tasa de retención de clientes</li>
+                        <li style="padding: 8px 0; color: #3a4b5c;">✅ Certificados en ISO 31000 e IFRS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                <p>La satisfacción de nuestros clientes es el mejor reflejo de nuestro compromiso con la excelencia financiera.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Financiera JAC transformó nuestra gestión de tesorería. Su sistema de monitoría nos permitió reducir costos financieros en un 23% en solo 6 meses. Su equipo es excepcional."</p>
+                    <div class="author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" 
+                             alt="Carlos Mendoza" 
+                             onerror="this.src='https://placehold.co/50x50/0a1628/d4af37?text=CM'">
+                        <div>
+                            <strong>Carlos Mendoza</strong><br>
+                            <small style="color:#5a6b7a;">CFO - Grupo Financiero del Sur</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"La asesoría en estrategia financiera que recibimos fue clave para nuestra expansión internacional. JAC nos ayudó a estructurar el capital de manera óptima."</p>
+                    <div class="author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" 
+                             alt="María Fernanda López" 
+                             onerror="this.src='https://placehold.co/50x50/0a1628/d4af37?text=ML'">
+                        <div>
+                            <strong>María Fernanda López</strong><br>
+                            <small style="color:#5a6b7a;">CEO - TechFinance LATAM</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Implementamos su modelo de gestión de riesgos y ahora dormimos tranquilos. La monitoría 24/7 nos alerta antes de que los problemas se materialicen."</p>
+                    <div class="author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" 
+                             alt="Andrés Ramírez" 
+                             onerror="this.src='https://placehold.co/50x50/0a1628/d4af37?text=AR'">
+                        <div>
+                            <strong>Andrés Ramírez</strong><br>
+                            <small style="color:#5a6b7a;">Director de Riesgos - Inversiones Pacífico</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Financiera JAC</h3>
+                    <p>Líderes en monitoría y estrategia financiera empresarial. Transformamos la gestión financiera de tu empresa con innovación y expertise.</p>
+                    <p style="margin-top:15px;">
+                        <strong>📍</strong> Av. Principal #1234, Piso 15<br>
+                        Ciudad de México, CDMX<br>
+                        <strong>📧</strong> contacto@financierajac.com<br>
+                        <strong>📞</strong> +52 55 1234 5678
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Monitoría Financiera</a></li>
+                        <li><a href="#">Estrategia Corporativa</a></li>
+                        <li><a href="#">Gestión de Riesgos</a></li>
+                        <li><a href="#">Consultoría Financiera</a></li>
+                        <li><a href="#">Automatización FinTech</a></li>
+                        <li><a href="#">Capacitación Empresarial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#metodologia">Metodología</a></li>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#">Blog Financiero</a></li>
+                        <li><a href="#">Casos de Éxito</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir insights financieros, tendencias del mercado y noticias exclusivas.</p>
+                    <form style="margin-top:15px; display:flex; gap:10px; flex-wrap:wrap;">
+                        <input type="email" placeholder="Tu correo electrónico" 
+                               style="padding:12px; border-radius:8px; border:none; flex:1; min-width:200px;">
+                        <button type="submit" 
+                                style="background:linear-gradient(45deg, #d4af37, #f4d03f); color:#0a1628; border:none; padding:12px 20px; border-radius:8px; font-weight:bold; cursor:pointer;">
+                            Suscribir
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Financiera JAC. Todos los derechos reservados. | Monitoría y Estrategia Financiera Empresarial | <a href="#" style="color:#d4af37;">Aviso de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/525512345678" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
